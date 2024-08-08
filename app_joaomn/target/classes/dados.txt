@@ -1,0 +1,5 @@
+Produto,1,Notebook,15,3500.00,true
+Produto,2,Mouse,30,50.00,true
+Produto,3,Teclado,25,100.00,false
+Fornecedor,1,Fornecedor A,2,1,2
+Fornecedor,2,Fornecedor B,1,3
