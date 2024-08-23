@@ -1,5 +1,7 @@
 # app_joaomn_infnet
-# Etapa 2 do Trabalho, by João Marcos de Morais Neto;
+# Trabalho Desenvolvimento de aplicações Java com Spring Boot [24E3_2], by João Marcos de Morais Neto;
 
 
-O projeto é uma aplicação Java Spring Boot que gerencia fornecedores e produtos. Ele utiliza Spring Data JPA para realizar operações de CRUD em entidades. O projeto lê dados de um arquivo dados.txt para preencher informações sobre fornecedores e produtos e, em seguida, persiste esses dados no banco de dados. A aplicação também demonstra o relacionamento entre fornecedores e produtos, facilitando a simulação de um sistema de gerenciamento básico.
+O projeto é uma aplicação Java Spring Boot que gerencia fornecedores e produtos, utilizando Spring Data JPA para operações CRUD.
+Ele lê dados de um arquivo dados.txt e os persiste no banco de dados, demonstrando o relacionamento entre entidades. 
+A aplicação expõe uma API RESTful com métodos de busca personalizada e validações básicas.
