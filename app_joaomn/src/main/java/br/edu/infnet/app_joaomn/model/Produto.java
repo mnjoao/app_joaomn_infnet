@@ -1,15 +1,26 @@
 package br.edu.infnet.app_joaomn.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.Inheritance;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.FetchType;
 
 @Entity
+@Inheritance
 public class Produto extends Item {
+
     private double preco;
     private boolean disponivel;
     private Integer quantidade;
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Fornecedor fornecedor;
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
 
     // Getters e Setters
@@ -37,6 +48,14 @@ public class Produto extends Item {
         this.categoria = categoria;
     }
 
+    public Fornecedor getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(Fornecedor fornecedor) {
+        this.fornecedor = fornecedor;
+    }
+
     @Override
     public String toString() {
         return "Produto{" +
@@ -46,6 +65,7 @@ public class Produto extends Item {
                 ", preco=" + preco +
                 ", disponivel=" + disponivel +
                 ", categoria=" + categoria +
+                ", fornecedor=" + fornecedor +
                 ", quantidade=" + quantidade +
                 '}';
     }

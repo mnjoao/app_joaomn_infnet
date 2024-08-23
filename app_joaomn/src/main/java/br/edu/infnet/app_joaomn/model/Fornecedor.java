@@ -5,7 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.FetchType;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Fornecedor {
@@ -15,7 +18,8 @@ public class Fornecedor {
     private String nome;
     private int numeroProdutos;
     
-    @OneToMany
+    @JsonManagedReference
+    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER)
     private List<Produto> produtos;
 
     public Long getId() {
